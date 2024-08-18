@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Consulta CEP</title>
+</head>
+<body>
+    <h1>Consulta CEP</h1>
+    <form method="get">
+        <label for="cep">Digite seu CEP:</label>
+        <input type="text" id="cep" name="cep">
+        <button type="submit">Buscar</button>
+    </form>
+
+    {% if error %}
+        <p style="color: red;">{{ error }}</p>
+    {% endif %}
+
+    {% if cep %}
+        <h2>Resultado:</h2>
+        <p><strong>CEP:</strong> {{ cep }}</p>
+        <p><strong>Rua:</strong> {{ logradouro }}</p>
+        <p><strong>Bairro:</strong> {{ bairro }}</p>
+        <p><strong>Cidade:</strong> {{ cidade }}</p>
+        <p><strong>Estado:</strong> {{ estado }}</p>
+    {% endif %}
+</body>
+</html>
